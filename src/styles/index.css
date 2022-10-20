@@ -1,12 +1,18 @@
-
-/* 
-
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
-
-*/
+.text-center{
+color:white;
+margin-top: 10%;
+margin-bottom:15px;
+}
+.list-group-item{
+    margin:auto;
+    width: 15%;
+    }
+body{
+background-color: rgb(62, 221, 208);
+}
+button{
+    float:right;
+    border:none;
+    background:white;
+    margin-top:-2px;
+}

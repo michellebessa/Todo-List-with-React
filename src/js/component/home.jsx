@@ -1,26 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+export const TodoList = () => {
 
-//create your first component
-const Home = () => {
-	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
-};
+const [list, setList]=useState([])
 
-export default Home;
+const [inputValue, setInputValue]=useState("")
+
+const addItemsList = (e) => {
+	e.preventDefault()
+	setList([...list,inputValue])
+	setInputValue("")
+}
+const removeItem=(index)=>{
+    let newList = list.filter((item,idx)=>idx!==index)
+
+setList(newList)
+}
+
+return (
+	<>
+	<div className="text-center">
+	<h1 className="tittle">Todos</h1>
+	<form onSubmit={addItemsList}>
+    <input type="text" placeholder="Add something to do..." value={inputValue} onChange={(e)=>setInputValue(e.target.value)}/>
+	</form>
+
+	{list.map((ListItem,index)=>{
+	return <li className="list-group-item" key={index}>
+		 {ListItem} <button onClick={()=>removeItem(index)} ><i class="fas fa-trash"></i></button>
+	</li>
+  })}
+    </div>
+	  </>
+  );}
+
+export default TodoList;
