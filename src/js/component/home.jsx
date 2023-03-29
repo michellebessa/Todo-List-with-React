@@ -27,7 +27,7 @@ return (
 
 	{list.map((ListItem,index)=>{
 	return <li className="list-group-item" key={index}>
-		 {ListItem} <button onClick={()=>removeItem(index)} ><i class="fas fa-trash"></i></button>
+		 {ListItem} <button onClick={()=>removeItem(index)} ><i className="fas fa-trash"></i></button>
 	</li>
   })}
     </div>
