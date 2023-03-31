@@ -10,8 +10,9 @@ export const TodoList = () => {
     setList([...list, inputValue]);
     setInputValue("");
   };
+
   const removeItem = (index) => {
-    let newList = list.filter((item, idx) => idx !== index);
+    let newList = list.filter((idx) => idx !== index);
 
     setList(newList);
   };
